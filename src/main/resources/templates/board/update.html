@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<html lang="UTF-8" xmlns:th="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Insert title here</title>
+<body>
+<form th:action="@{'/post/edit/' + ${boardEntity.id}}" method="post">
+    <input type="hidden" name="_method" value="put"/>
+    <input type="hidden" name="id" th:value="${boardEntity.id}"/>
+
+    제목 : <input type="text" name="title" th:value="${boardEntity.title}"> <br>
+    작성자 : <input type="text" name="writer" th:value="${boardEntity.writer}"> <br>
+   내용 :  <textarea name="content" th:text="${boardEntity.content}"></textarea><br>
+
+    <input type="submit" value="수정">
+</form>
+</body>
+</html>
